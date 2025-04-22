@@ -10,7 +10,7 @@ describe('Auth Token API Test', () => {
   it('check for invalid username', () => {
     cy.request({
       method: 'POST',
-      url: 'https://restful-booker.herokuapp.com/auth',
+      url: '/auth',
       body: {
         username: 'student',
         password: 'password123'
@@ -25,7 +25,7 @@ describe('Auth Token API Test', () => {
   it('check for invalid password', () => {
     cy.request({
       method: 'POST',
-      url: 'https://restful-booker.herokuapp.com/auth',
+      url: '/auth',
       body: {
         username: 'admin',
         password: 'password124'

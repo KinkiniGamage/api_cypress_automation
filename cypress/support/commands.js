@@ -2,7 +2,7 @@
 Cypress.Commands.add('getAuthToken', () => {
   return cy.request({
     method: 'POST',
-    url: 'https://restful-booker.herokuapp.com/auth',
+    url: '/auth',
     body: {
       username: 'admin',
       password: 'password123'
@@ -22,7 +22,7 @@ Cypress.Commands.add('createBooking', () => {
   return cy.fixture('bookingData').then((bookingData) => {
     return cy.request({
       method: 'POST',
-      url: 'https://restful-booker.herokuapp.com/booking',
+      url: '/booking',
       body: bookingData,
       headers: {
         'Content-Type': 'application/json'

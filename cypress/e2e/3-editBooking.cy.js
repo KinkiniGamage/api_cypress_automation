@@ -5,12 +5,13 @@ it('should edit an existing booking successfully', () => {
 
     cy.getAuthToken().then((token) => {
       cy.log('Token: ' + token);
+      cy.log('bookingId: ' + bookingId);
 
       cy.request({
         method: 'PUT',
-        url: 'https://restful-booker.herokuapp.com/booking/${bookingId}',
+        url: '/booking/' + bookingId,
         headers: {
-          'Cookie': 'token=${token}'
+          'Cookie': 'token=' + token
         },
         body: {
           firstname: 'James',
